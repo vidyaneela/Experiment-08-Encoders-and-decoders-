@@ -55,42 +55,79 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step-1: create module encoder and decoder.
+
+Step-2: Get inputs and outputs for encoders and decoders.
+
+Step-3: perform or operation for encoder and and logic for decoders.
+
+Step-4: perform RTL LOGIC and get waveform.
+
+Step-5: End the module
 
 
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: M.Vidya Neela
+RegisterNumber:  212221230120
 */
-
-
+### ENCODER:
+```
+module EX7(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+### DECODER:
+```
+module EX7(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
 
 
 
 
 ### RTL LOGIC  
-
-
-
-
-
-
+### ENCODER:
+![201480828-81080553-588b-44dc-a652-0bb566f81ab2](https://user-images.githubusercontent.com/94169318/202908720-b9587b3a-9bf9-49c5-9934-83c96058c073.png)
+### DECODER:
+![201480837-7db0b6cc-e7d8-4d2d-8509-ba247ed2f000](https://user-images.githubusercontent.com/94169318/202908737-01eb4850-d164-4557-b4e9-b9615ca67800.png)
 
 
 ### TIMING DIGRAMS  
+### ENCODER:
+![201480843-3b04c3ea-9df1-4746-852d-b7b0337119f2](https://user-images.githubusercontent.com/94169318/202908789-e9372e54-deae-401f-b5d7-4a715609f670.png)
 
+### DECODER:
+
+![201480849-07fb9b44-fc4c-4f76-8087-68b4524fd1b1](https://user-images.githubusercontent.com/94169318/202908794-bbbde6e1-269b-4a41-ac26-b44d8fc8e3a8.png)
 
 
 
 
 ### TRUTH TABLE 
+### ENCODER:
 
-
-
-
+![201480858-4167f5a5-3759-4e85-84e7-abbe0509f5c9](https://user-images.githubusercontent.com/94169318/202908819-bf92b5ae-0d7b-4328-a896-b52aa3e470ec.png)
+ 
+ ### DECODER:
+![201480864-f1d7a808-448f-4a96-8082-7283a70228a2](https://user-images.githubusercontent.com/94169318/202908843-c812f8d8-90cd-4bd4-b943-3be75dbad37e.png)
 
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is completed.
